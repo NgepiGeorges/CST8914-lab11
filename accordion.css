@@ -50,3 +50,26 @@ button.accordion.is-open {
   overflow: hidden;
   transition: max-height 0.2s ease-in-out;
 }
+
+/* Lab  fixes */
+
+/* Headings around the buttons should not change the look */
+.accordion-heading {
+  margin: 0;
+font-size: inherit;
+}
+/* Clear and visible focus for keyboard users */
+button.accordion:focus-visible {
+  outline: 3px solid #005fcc;
+  outline-offset: -3px;
+}
+
+/* A closed panel is hidden from screen readers too, not only visually */
+.accordion-content {
+  visibility: hidden;
+  transition: max-height 0.2s ease-in-out, visibility 0.2s;
+}
+
+.accordion-content.is-open {
+  visibility: visible;
+}
